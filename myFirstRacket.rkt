@@ -31,13 +31,36 @@
 
 
 #| function-9 function : Defines a function that takes a function as an argument.
-  Then passes an int, which is x, to that function and adds nine to it.
+  Then passes an int, which is x, to that function and adds 6 to it.
 |#
 
-(define add-nine-to-arg
+(define function-9
   (λ (x)
-    (+ x 9)))
+    (+ x 6)))
 
 
  #| Here's the function call as an example to show that this function works |#
-(add-nine-to-arg 6)
+(function-9 9)
+
+
+# | my-map function: define a function that accepts another function as an argument.
+    this function is suppose to mimic the behavior of map.
+    addNum is a helper function that just performs addition to the arg sent to it.
+|#
+(define addNum
+      (λ (x)
+        (+ x x)))
+
+(define (my-map lst)
+  (if (empty? lst)
+      empty
+      (cons (addNum (first lst)) (my-map (rest lst)))))
+
+
+#| Here's the function call to my-map and a list argument|#
+(my-map '(2 3 4 5 5))
+
+    
+
+
+
