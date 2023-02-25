@@ -60,6 +60,23 @@
 #| Here's the function call to my-map and a list argument|#
 (my-map '(2 3 4 5 5))
 
+
+#| pair-up function: define a function that takes two lists as arguments, then returns
+   a single list of pairs.
+|#
+
+(define (pair-up frlst seclst)
+    ( if (empty? frlst)
+         empty
+           ( if(empty? seclst)
+               empty
+               (cons (list (first frlst) (first seclst))
+                     (pair-up (rest frlst) (rest seclst))))))
+                
+               
+#| Here's the function call with two example lists as arguments.|#
+(pair-up '(1 2 3) '("yes" "bananas" "hello"))
+
     
 
 
